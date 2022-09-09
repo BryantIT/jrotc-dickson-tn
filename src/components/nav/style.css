@@ -56,3 +56,18 @@
   color: #ffffff;
   margin-left: 5px;
 }
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1170px;
+  }
+
+  .custom_nav-container.navbar-expand-lg .navbar-nav .nav-link {
+    padding: 10px 30px;
+  }
+}
+@media (max-width: 1120px) {
+
+  .quote_btn-container a {
+    display: none;
+  }
+}
