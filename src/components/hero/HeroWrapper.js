@@ -1,6 +1,7 @@
 import React from 'react'
 // Components
 import Nav from '../nav/Nav'
+import Slider from '../slider/Slider'
 import './style.css'
 
 const HeroWrapper = () => {
@@ -9,6 +10,7 @@ const HeroWrapper = () => {
       <header className='header_section'>
         <div className='container-fluid'>
           <Nav />
+          <Slider />
         </div>
       </header>
     </div>
