@@ -24,3 +24,41 @@
   background: rgba(0, 0, 0, 0.7);
   content: "";
 }
+
+a {
+  color: #2D6CDF;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+a:hover, a:active, a:focus {
+  color: #2D6CDF;
+  outline: none;
+  text-decoration: none;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+h1, h2, h3, h4, h5, h6, figure {
+  color: #000;
+  font-family: "Roboto Slab", serif;
+  font-weight: 400;
+  margin: 0 0 20px 0;
+}
+
+::-webkit-selection {
+  color: #fff;
+  background: #2D6CDF;
+}
+
+::-moz-selection {
+  color: #fff;
+  background: #2D6CDF;
+}
+
+::selection {
+  color: #fff;
+  background: #2D6CDF;
+}
