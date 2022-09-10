@@ -1,6 +1,7 @@
 import React from 'react'
 // Components
 import Nav from './components/nav/Nav'
+import Footer from './components/footer/Footer'
 // Pages
 import Home from './pages/Home'
 import { Routes, Route } from 'react-router-dom'
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />}></Route>
       </Routes>
+      <Footer />
     </div>
   )
 }
