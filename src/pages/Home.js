@@ -5,6 +5,7 @@ import About from '../components/about/About'
 import Teams from '../components/teams/Teams'
 import Gallery from '../components/gallery/Gallery'
 import News from '../components/news/News'
+import Contact from '../components/contact/Contact'
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <Teams />
       <Gallery />
       <News />
+      <Contact />
     </Fragment>
   )
 }
