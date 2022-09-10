@@ -19,7 +19,10 @@
 }
 .custom_nav-container {
   z-index: 99999;
-  padding: 5px 0;
+  background-color: #1e025b;
+  padding: 10px 0;
+  padding-right: 25px;
+  padding-left: 25px;
 }
 
 .custom_nav-container .navbar-toggler {
@@ -56,6 +59,9 @@
   color: #ffffff;
   margin-left: 5px;
 }
+.nav_container {
+  margin: 0 auto;
+}
 @media (min-width: 1200px) {
   .container {
     max-width: 1170px;
@@ -66,7 +72,6 @@
   }
 }
 @media (max-width: 1120px) {
-
   .quote_btn-container a {
     display: none;
   }

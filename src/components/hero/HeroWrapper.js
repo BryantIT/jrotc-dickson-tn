@@ -9,7 +9,6 @@ const HeroWrapper = () => {
     <div className='hero_area'>
       <header className='header_section'>
         <div className='container-fluid'>
-          <Nav />
           <Slider />
         </div>
       </header>
