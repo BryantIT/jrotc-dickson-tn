@@ -5,8 +5,8 @@ const Nav = () => {
   return (
     <nav className='navbar navbar-expand-lg custom_nav-container '>
       <a className='navbar-brand' href='index.html'>
-        <img src={require('../../assests/imgs/logo.png')} alt='' />
-        <span>ELEMENTS</span>
+        <img src={require('../../assests/imgs/DCHS-JROTC-Cougar.jpg')} alt='' />
+        <span>DCHS - JROTC</span>
       </a>
       <button
         className='navbar-toggler'

@@ -25,7 +25,7 @@ const About = () => {
           </div>
           <div className='col-md-6'>
             <div className='img-box'>
-              <img src={require('../../assests/imgs/about-img.png')} alt='' />
+              <img src={require('../../assests/imgs/DCHS-JROTC-Cougar-noBG.png')} alt='' />
             </div>
           </div>
         </div>
