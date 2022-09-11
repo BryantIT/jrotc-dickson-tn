@@ -8,11 +8,14 @@ import './style.css'
 const Slider = ({ siteData }) => {
   const [siteInfo, setSiteInfo] = useState(null)
   const [carouselImageArray, setCarouselImageArray] = useState(null)
+  const [indexMax, setIndexMax] = useState(0)
+  const [carouselPaused, setCarouselPaused] = useState(false)
   const [defaultImage, setDefaultImage] = useState(null)
   const [displayedImage, setDisplayedImage] = useState(null)
   const [imageIndex, setImageIndex] = useState(1)
   const [moto, setMoto] = useState('')
   const [titleLines, setTitleLines] = useState(null)
+  let timerRef
   useEffect(() => {
     // Get images from backend once setup
     const imageArray = [
@@ -20,6 +23,7 @@ const Slider = ({ siteData }) => {
       image2,
       image3,
     ]
+    setIndexMax(imageArray.length)
     setCarouselImageArray(imageArray)
     setDefaultImage(imageArray[0])
     setMoto(siteData.moto)
@@ -31,11 +35,14 @@ const Slider = ({ siteData }) => {
   }, [])
 
   const nextImage = (imageIndex) => {
-    if (imageIndex >= carouselImageArray.length) {
+    if (imageIndex >= indexMax) {
       imageIndex = 0
     }
 
-    setDisplayedImage(carouselImageArray[imageIndex])
+    // This if statement prevents errors from array being null for a split second during promise resolution
+    if(carouselImageArray) {
+      setDisplayedImage(carouselImageArray[imageIndex])
+    }
     imageIndex = imageIndex += 1
     setImageIndex(imageIndex)
   }
@@ -43,10 +50,19 @@ const Slider = ({ siteData }) => {
     setDisplayedImage(carouselImageArray[imageIndex])
     imageIndex = imageIndex -= 1
     if (imageIndex <= 0) {
-      imageIndex = carouselImageArray.length
+      imageIndex = indexMax
     }
     setImageIndex(imageIndex)
   }
+
+  const intervalCallBack = () => {
+    if(!carouselPaused) {
+      nextImage(imageIndex)
+      clearInterval(timerRef)
+    }
+  }
+  timerRef = setInterval(intervalCallBack, 15000, imageIndex )
+
 
   return (
     <section className="slider_section position-relative">
