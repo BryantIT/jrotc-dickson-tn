@@ -25,6 +25,7 @@ function App() {
         heroWrapper: info.heroWrapper,
         nav: info.nav,
         aboutPage: info.aboutPage,
+        teamsPage: info.teamsPage
       }
     })
     return data

@@ -1,122 +1,134 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { Link } from "react-router-dom"
 import './style.css'
 
-const Teams = () => {
+const Teams = ({ siteData }) => {
+  const [title, setTitle] = useState(null)
+  const [statement, setStatement] = useState(null)
+  const [teamNames, setTeamNames] = useState(null)
+
+  useEffect(() =>{
+    setTitle(siteData.title)
+    setStatement(siteData.statement)
+    setTeamNames(siteData.teamNames)
+    console.log(siteData)
+  }, [])
   return (
     <section className='service_section layout_padding'>
       <div className='container'>
         <div className='d-flex flex-column align-items-end'>
           <div className='custom_heading-container'>
             <hr />
-            <h2>Services</h2>
+            <h2>{title ? title : ''}</h2>
           </div>
           <p>
-            There are many variations of passages of Lorem Ipsum available, but
-            the majority
+            {statement ? statement : ''}
           </p>
         </div>
       </div>
       <div className='container'>
         <div className='service_container layout_padding2'>
-          <a href=''>
-            <div className='box'>
+          <Link to='/gridiron-guard' >
+          <div className='box'>
               <div className='img-box'>
                 <img
-                  src={require('../../assests/imgs/s-1.png')}
+                  src={require('../../assests/imgs/pushup.png')}
                   alt=''
                   className='img-1'
                 />
                 <img
-                  src={require('../../assests/imgs/s1-blue.png')}
+                  src={require('../../assests/imgs/pushupBlue.png')}
                   alt=''
                   className='img-2'
                 />
               </div>
               <div className='name'>
-                <h6>web</h6>
+                <h6>{teamNames && teamNames.gridironGuard ? teamNames.gridironGuard : ''}</h6>
+              </div>
+            </div>
+          </Link>
+          <Link to='/color-guard'>
+          <div className='box'>
+              <div className='img-box'>
+                <img
+                  src={require('../../assests/imgs/colorguard.png')}
+                  alt=''
+                  className='img-1'
+                />
+                <img
+                  src={require('../../assests/imgs/colorguardBlue.png')}
+                  alt=''
+                  className='img-2'
+                />
+              </div>
+              <div className='name'>
+                <h6>{teamNames && teamNames.colorGuard ? teamNames.colorGuard : ''}</h6>
+              </div>
+            </div>
+          </Link>
+          <a href=''>
+            <div className='box'>
+              <div className='img-box'>
+                <img
+                  src={require('../../assests/imgs/drillTeam.png')}
+                  alt=''
+                  className='img-1'
+                />
+                <img
+                  src={require('../../assests/imgs/drillTeamBlue.png')}
+                  alt=''
+                  className='img-2'
+                />
+              </div>
+              <div className='name'>
+                <h6>{teamNames && teamNames.drillTeam ? teamNames.drillTeam : ''}</h6>
               </div>
             </div>
           </a>
-          <a href=''>
-            <div className='box'>
+          <Link to='air-rifle' >
+          <div className='box'>
               <div className='img-box'>
                 <img
-                  src={require('../../assests/imgs/s-2.png')}
+                  src={require('../../assests/imgs/airRifle.png')}
                   alt=''
                   className='img-1'
                 />
                 <img
-                  src={require('../../assests/imgs/s2-blue.png')}
+                  src={require('../../assests/imgs/airRifleBlue.png')}
                   alt=''
                   className='img-2'
                 />
               </div>
               <div className='name'>
-                <h6>Graph Design</h6>
+                <h6>{teamNames && teamNames.airRifle ? teamNames.airRifle : ''}</h6>
               </div>
             </div>
-          </a>
+          </Link>
           <a href=''>
+            <Link to='archery' >
             <div className='box'>
               <div className='img-box'>
                 <img
-                  src={require('../../assests/imgs/s-3.png')}
+                  src={require('../../assests/imgs/archery.png')}
                   alt=''
                   className='img-1'
                 />
                 <img
-                  src={require('../../assests/imgs/s3-blue.png')}
+                  src={require('../../assests/imgs/archeryBlue.png')}
                   alt=''
                   className='img-2'
                 />
               </div>
               <div className='name'>
-                <h6>vector Design</h6>
+                <h6>{teamNames && teamNames.archery ? teamNames.archery : ''}</h6>
               </div>
             </div>
-          </a>
-          <a href=''>
-            <div className='box'>
-              <div className='img-box'>
-                <img
-                  src={require('../../assests/imgs/s-4.png')}
-                  alt=''
-                  className='img-1'
-                />
-                <img
-                  src={require('../../assests/imgs/s4-blue.png')}
-                  alt=''
-                  className='img-2'
-                />
-              </div>
-              <div className='name'>
-                <h6>Draw</h6>
-              </div>
-            </div>
-          </a>
-          <a href=''>
-            <div className='box'>
-              <div className='img-box'>
-                <img
-                  src={require('../../assests/imgs/s-5.png')}
-                  alt=''
-                  className='img-1'
-                />
-                <img
-                  src={require('../../assests/imgs/s5-blue.png')}
-                  alt=''
-                  className='img-2'
-                />
-              </div>
-              <div className='name'>
-                <h6>Cloud</h6>
-              </div>
-            </div>
+            </Link>
           </a>
         </div>
       </div>
       <div className='read-btn'>
-        <a href=''>Read More</a>
+        <Link to='/teams' >Read More</Link>
       </div>
     </section>
   )
