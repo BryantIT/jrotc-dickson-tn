@@ -1,18 +1,23 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, Fragment } from 'react'
+import { Link } from "react-router-dom"
+// Components
 import './style.css'
 
 const Nav = ({ siteData }) => {
   const [title, setTitle] = useState()
+  const [showSubNav, setShowSubNav] = useState(false)
+  const [subNavOptions, setSubNavOptions] = useState()
 
   useEffect(() => {
     setTitle(siteData.title)
   }, [])
   return (
-    <nav className='navbar navbar-expand-lg custom_nav-container '>
-      <a className='navbar-brand' href='index.html'>
-        <img src={require('../../assests/imgs/DCHS-JROTC-Cougar.jpg')} alt='' />
+    <Fragment>
+      <nav className='navbar navbar-expand-lg custom_nav-container '>
+    <Link to='/' className='navbar-brand'>
+    <img src={require('../../assests/imgs/DCHS-JROTC-Cougar.jpg')} alt='' />
         <span>{ title }</span>
-      </a>
+    </Link>
       <button
         className='navbar-toggler'
         type='button'
@@ -29,51 +34,61 @@ const Nav = ({ siteData }) => {
         <div className='d-flex mx-auto flex-column flex-lg-row align-items-center'>
           <ul className='navbar-nav'>
             <li className='nav-item active'>
-              <a className='nav-link' href='index.html'>
-                Home <span className='sr-only'>(current)</span>
-              </a>
+            <Link 
+            to='/' 
+            className='nav-link'
+             >Home</Link>
             </li>
             <li className='nav-item'>
-              <a className='nav-link' href='about.html'>
-                About{' '}
-              </a>
+            <Link 
+            to='/about' 
+            className='nav-link'
+            >About
+            </Link>
             </li>
             <li className='nav-item'>
-              <a className='nav-link' href='service.html'>
-                Services{' '}
-              </a>
+            <Link 
+            to='/cadet-info' 
+            className='nav-link'
+            >Cadet Info
+            </Link>
             </li>
             <li className='nav-item'>
-              <a className='nav-link' href='portfolio.html'>
-                {' '}
-                Portfolio
-              </a>
+            <Link 
+            to='/parent-info' 
+            className='nav-link'
+            >Parent Info
+            </Link>
             </li>
             <li className='nav-item'>
-              <a className='nav-link' href='news.html'>
-                {' '}
-                news{' '}
-              </a>
+            <Link 
+            to='/news' 
+            className='nav-link'
+             >News
+             </Link>
             </li>
             <li className='nav-item'>
-              <a className='nav-link' href='contact.html'>
-                Contact us
-              </a>
+            <Link 
+            to='/events' 
+            className='nav-link'
+             >Events
+             </Link>
+            </li>
+            <li className='nav-item'>
+            <Link 
+            to='/gallery' 
+            className='nav-link'
+             >Gallery
+             </Link>
+            </li>
+            <li className='nav-item'>
+            <Link to='/contact' className='nav-link' >Contact</Link>
             </li>
           </ul>
         </div>
-        <div className='quote_btn-container  d-flex justify-content-center'>
-          <a href=''>
-            <img src={require('../../assests/imgs/call.png')} alt='' />
-            CALL : +01 1234567890
-          </a>
-          <a href=''>
-            <span>@</span>
-            demo@gmail.com
-          </a>
-        </div>
       </div>
     </nav>
+    </Fragment>
   )
 }
 
