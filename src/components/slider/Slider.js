@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react'
-import SiteDataContext from '../../../src/SiteDataContext'
-import image1 from '../../assests/imgs/slider-img.jpg'
-import image2 from '../../assests/imgs/IMG_7901.jpg'
-import image3 from '../../assests/imgs/slider-img.jpg'
+import { Link } from "react-router-dom"
+import image1 from '../../assests/imgs/dchsFlag.jpg'
+import image2 from '../../assests/imgs/dchsLine.jpg'
+import image3 from '../../assests/imgs/dchsplatflag.jpg'
 import './style.css'
 
 const Slider = ({ siteData }) => {
@@ -28,7 +28,6 @@ const Slider = ({ siteData }) => {
       second: siteData.title2,
       third: siteData.title3
     })
-    console.log(titleLines)
   }, [])
 
   const nextImage = (imageIndex) => {
@@ -76,9 +75,7 @@ const Slider = ({ siteData }) => {
             }
           </p>
           <div>
-            <a href="" className="slider-link">
-              CONTACT US
-            </a>
+          <Link to='/contact' className="slider-link">CONTACT US</Link>
           </div>
         </div>
         <div className="img-box">
