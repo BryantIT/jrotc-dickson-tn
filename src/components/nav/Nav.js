@@ -1,12 +1,17 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './style.css'
 
-const Nav = () => {
+const Nav = ({ siteData }) => {
+  const [title, setTitle] = useState()
+
+  useEffect(() => {
+    setTitle(siteData.title)
+  }, [])
   return (
     <nav className='navbar navbar-expand-lg custom_nav-container '>
       <a className='navbar-brand' href='index.html'>
         <img src={require('../../assests/imgs/DCHS-JROTC-Cougar.jpg')} alt='' />
-        <span>DCHS - JROTC</span>
+        <span>{ title }</span>
       </a>
       <button
         className='navbar-toggler'

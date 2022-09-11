@@ -1,8 +1,6 @@
-import firebase from 'firebase/compat/app'
-import 'firebase/compat/functions'
-import 'firebase/compat/firestore'
-import 'firebase/compat/auth'
-import 'firebase/compat/storage'
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+import { getAuth } from "firebase/auth"
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -15,11 +13,12 @@ const firebaseConfig = {
   measurementId: process.env.REACT_APP_MEASUREMENT_ID
 };
 
-const firebaseApp = firebase.initializeApp(firebaseConfig)
+const firebaseApp = initializeApp(firebaseConfig)
 
-const db = firebaseApp.firestore()
-const auth = firebaseApp.auth()
-const storage = firebaseApp.storage()
+const db = getFirestore(firebaseApp)
+const auth = getAuth(firebaseApp)
+// const storage = firebaseApp.storage()
 // const provider = new firebase.auth.GoogleAuthProvider()
 
-export { db, storage, auth, firebase }
+// export { db, storage, auth, firebase }
+export { db, auth, firebaseApp }

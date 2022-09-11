@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState, useEffect } from 'react'
 // Components
 import HeroWrapper from '../components/hero/HeroWrapper'
 import About from '../components/about/About'
@@ -7,10 +7,10 @@ import Gallery from '../components/gallery/Gallery'
 import News from '../components/news/News'
 import Contact from '../components/contact/Contact'
 
-const Home = () => {
+const Home = ({ siteData }) => {
   return (
     <Fragment>
-      <HeroWrapper />
+      <HeroWrapper siteData={siteData.heroWrapper} />
       <About />
       <Teams />
       <Gallery />

@@ -1,14 +1,17 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
+import SiteDataContext from '../../../src/SiteDataContext'
 import image1 from '../../assests/imgs/slider-img.jpg'
 import image2 from '../../assests/imgs/IMG_7901.jpg'
 import image3 from '../../assests/imgs/slider-img.jpg'
 import './style.css'
 
-const Slider = () => {
+const Slider = ({ siteData }) => {
+  const [siteInfo, setSiteInfo] = useState(null)
   const [carouselImageArray, setCarouselImageArray] = useState(null)
   const [defaultImage, setDefaultImage] = useState(null)
   const [displayedImage, setDisplayedImage] = useState(null)
   const [imageIndex, setImageIndex] = useState(1)
+  const [moto, setMoto] = useState('')
   useEffect(() => {
     // Get images from backend once setup
     const imageArray = [
@@ -18,6 +21,7 @@ const Slider = () => {
     ]
     setCarouselImageArray(imageArray)
     setDefaultImage(imageArray[0])
+    setMoto(siteData.moto)
   }, [])
 
   const nextImage = (imageIndex) => {
@@ -55,8 +59,9 @@ const Slider = () => {
             NEW BRAND
           </h1>
           <p>
-            It is a long established fact that a reader will be distracted by the readable content of a page when
-            looking at its layout. The point of using Lorem
+            {
+              moto ? moto : ''
+            }
           </p>
           <div>
             <a href="" className="slider-link">
