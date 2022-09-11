@@ -23,30 +23,30 @@ function App() {
       const info = doc.data()
       data = {
         heroWrapper: info.heroWrapper,
-        nav: info.nav
+        nav: info.nav,
+        aboutPage: info.aboutPage,
       }
     })
     return data
   }
   useEffect(() => {
     getSiteData()
-    .then(data => {
-      window.localStorage.setItem('siteData', JSON.stringify(data))
-    })
-    .then(() => {
-      setSiteData(JSON.parse(window.localStorage.getItem('siteData')))
-      setLoading(false)
-      console.log('APP', JSON.parse(window.localStorage.getItem('siteData')))
-    })
+      .then((data) => {
+        window.localStorage.setItem('siteData', JSON.stringify(data))
+      })
+      .then(() => {
+        setSiteData(JSON.parse(window.localStorage.getItem('siteData')))
+        setLoading(false)
+        console.log('APP', JSON.parse(window.localStorage.getItem('siteData')))
+      })
   }, [])
-  return (
-      loading ? null :
-      <div className='app'>
-        <Nav siteData={siteData.nav} />
-        <Routes>
-          <Route path='/' element={<Home siteData={siteData} />}></Route>
-        </Routes>
-        <Footer />
+  return loading ? null : (
+    <div className='app'>
+      <Nav siteData={siteData.nav} />
+      <Routes>
+        <Route path='/' element={<Home siteData={siteData} />}></Route>
+      </Routes>
+      <Footer />
     </div>
   )
 }

@@ -11,7 +11,7 @@ const Home = ({ siteData }) => {
   return (
     <Fragment>
       <HeroWrapper siteData={siteData.heroWrapper} />
-      <About />
+      <About siteData={siteData.aboutPage} />
       <Teams />
       <Gallery />
       <News />
