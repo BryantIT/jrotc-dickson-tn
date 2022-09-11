@@ -12,6 +12,7 @@ const Slider = ({ siteData }) => {
   const [displayedImage, setDisplayedImage] = useState(null)
   const [imageIndex, setImageIndex] = useState(1)
   const [moto, setMoto] = useState('')
+  const [titleLines, setTitleLines] = useState(null)
   useEffect(() => {
     // Get images from backend once setup
     const imageArray = [
@@ -22,6 +23,12 @@ const Slider = ({ siteData }) => {
     setCarouselImageArray(imageArray)
     setDefaultImage(imageArray[0])
     setMoto(siteData.moto)
+    setTitleLines({
+      first: siteData.title1,
+      second: siteData.title2,
+      third: siteData.title3
+    })
+    console.log(titleLines)
   }, [])
 
   const nextImage = (imageIndex) => {
@@ -53,11 +60,16 @@ const Slider = ({ siteData }) => {
         <div className="detail-box">
         <button className="carousel-control-prev" onClick={() => prevImage(imageIndex)}></button>
         <button className="carousel-control-next" onClick={() => nextImage(imageIndex)}></button>
-          <h1>
-            DiscoverING <br />
-            SOMETHING <br />
-            NEW BRAND
-          </h1>
+          {
+            titleLines ?
+            <h1>
+            {titleLines.first}
+            <br />
+            {titleLines.second}
+            <br />
+            {titleLines.third}
+          </h1> : null
+          }
           <p>
             {
               moto ? moto : ''
