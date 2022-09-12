@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './style.css'
-import { Link } from "react-router-dom"
+import { Link } from 'react-router-dom'
 import gallery1 from '../../assests/imgs/gallery1.jpg'
 import gallery2 from '../../assests/imgs/galler2.jpg'
 import gallery3 from '../../assests/imgs/gallery3.jpg'
@@ -29,86 +29,88 @@ const Gallery = ({ siteData }) => {
   const imageArray = [
     {
       image: gallery1,
-      imageName: 'gallery1'
+      imageName: 'gallery1',
     },
     {
       image: gallery2,
-      imageName: 'gallery2'
+      imageName: 'gallery2',
     },
     {
       image: gallery3,
-      imageName: 'gallery3'
+      imageName: 'gallery3',
     },
     {
       image: gallery4,
-      imageName: 'gallery4'
+      imageName: 'gallery4',
     },
     {
       image: gallery5,
-      imageName: 'gallery5'
+      imageName: 'gallery5',
     },
     {
       image: gallery6,
-      imageName: 'gallery6'
+      imageName: 'gallery6',
     },
     {
       image: gallery7,
-      imageName: 'gallery7'
+      imageName: 'gallery7',
     },
     {
       image: gallery8,
-      imageName: 'gallery8'
+      imageName: 'gallery8',
     },
     {
       image: gallery9,
-      imageName: 'gallery9'
+      imageName: 'gallery9',
     },
     {
       image: gallery10,
-      imageName: 'gallery10'
+      imageName: 'gallery10',
     },
     {
       image: gallery11,
-      imageName: 'gallery11'
+      imageName: 'gallery11',
     },
     {
       image: gallery12,
-      imageName: 'gallery12'
+      imageName: 'gallery12',
     },
     {
       image: gallery13,
-      imageName: 'gallery13'
+      imageName: 'gallery13',
     },
     {
       image: gallery14,
-      imageName: 'gallery14'
+      imageName: 'gallery14',
     },
     {
       image: gallery15,
-      imageName: 'gallery15'
+      imageName: 'gallery15',
     },
     {
       image: gallery16,
-      imageName: 'gallery16'
+      imageName: 'gallery16',
     },
   ]
 
   const shuffle = (array) => {
-    let currentIndex = array.length,  randomIndex;
+    let currentIndex = array.length,
+      randomIndex
 
-  // While there remain elements to shuffle.
-  while (currentIndex != 0) {
+    // While there remain elements to shuffle.
+    while (currentIndex != 0) {
+      // Pick a remaining element.
+      randomIndex = Math.floor(Math.random() * currentIndex)
+      currentIndex--
 
-    // Pick a remaining element.
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
+      // And swap it with the current element.
+      ;[array[currentIndex], array[randomIndex]] = [
+        array[randomIndex],
+        array[currentIndex],
+      ]
+    }
 
-    // And swap it with the current element.
-    [array[currentIndex], array[randomIndex]] = [
-      array[randomIndex], array[currentIndex]];
-  }
-
-  return array;
+    return array
   }
   useEffect(() => {
     setTitle(siteData.title)
@@ -137,9 +139,12 @@ const Gallery = ({ siteData }) => {
               ? previewArray.map((image) => (
                   <div className='col-md-4' key={image.imageName}>
                     <div className='img-box'>
-                      <img src={image.image} alt=''/>
+                      <img src={image.image} alt='' />
                       <Link to='/gallery'>
-                      <img src={require('../../assests/imgs/link.png') } alt=''/>
+                        <img
+                          src={require('../../assests/imgs/link.png')}
+                          alt=''
+                        />
                       </Link>
                     </div>
                   </div>
@@ -148,8 +153,8 @@ const Gallery = ({ siteData }) => {
           </div>
         </div>
         <div className='read-btn'>
-        <Link to='/gallery' >See More</Link>
-      </div>
+          <Link to='/gallery'>See More</Link>
+        </div>
       </div>
     </section>
   )

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from "react-router-dom"
+import { Link } from 'react-router-dom'
 import './style.css'
 
 const Teams = ({ siteData }) => {
@@ -7,7 +7,7 @@ const Teams = ({ siteData }) => {
   const [statement, setStatement] = useState(null)
   const [teamNames, setTeamNames] = useState(null)
 
-  useEffect(() =>{
+  useEffect(() => {
     setTitle(siteData.title)
     setStatement(siteData.statement)
     setTeamNames(siteData.teamNames)
@@ -20,15 +20,13 @@ const Teams = ({ siteData }) => {
             <hr />
             <h2>{title ? title : ''}</h2>
           </div>
-          <p>
-            {statement ? statement : ''}
-          </p>
+          <p>{statement ? statement : ''}</p>
         </div>
       </div>
       <div className='container'>
         <div className='service_container layout_padding2'>
-          <Link to='/gridiron-guard' >
-          <div className='box'>
+          <Link to='/gridiron-guard'>
+            <div className='box'>
               <div className='img-box'>
                 <img
                   src={require('../../assests/imgs/pushup.png')}
@@ -42,12 +40,16 @@ const Teams = ({ siteData }) => {
                 />
               </div>
               <div className='name'>
-                <h6>{teamNames && teamNames.gridironGuard ? teamNames.gridironGuard : ''}</h6>
+                <h6>
+                  {teamNames && teamNames.gridironGuard
+                    ? teamNames.gridironGuard
+                    : ''}
+                </h6>
               </div>
             </div>
           </Link>
           <Link to='/color-guard'>
-          <div className='box'>
+            <div className='box'>
               <div className='img-box'>
                 <img
                   src={require('../../assests/imgs/colorguard.png')}
@@ -61,12 +63,16 @@ const Teams = ({ siteData }) => {
                 />
               </div>
               <div className='name'>
-                <h6>{teamNames && teamNames.colorGuard ? teamNames.colorGuard : ''}</h6>
+                <h6>
+                  {teamNames && teamNames.colorGuard
+                    ? teamNames.colorGuard
+                    : ''}
+                </h6>
               </div>
             </div>
           </Link>
-          <Link to='/drill-team' >
-          <div className='box'>
+          <Link to='/drill-team'>
+            <div className='box'>
               <div className='img-box'>
                 <img
                   src={require('../../assests/imgs/drillTeam.png')}
@@ -80,12 +86,14 @@ const Teams = ({ siteData }) => {
                 />
               </div>
               <div className='name'>
-                <h6>{teamNames && teamNames.drillTeam ? teamNames.drillTeam : ''}</h6>
+                <h6>
+                  {teamNames && teamNames.drillTeam ? teamNames.drillTeam : ''}
+                </h6>
               </div>
             </div>
           </Link>
-          <Link to='air-rifle' >
-          <div className='box'>
+          <Link to='air-rifle'>
+            <div className='box'>
               <div className='img-box'>
                 <img
                   src={require('../../assests/imgs/airRifle.png')}
@@ -99,11 +107,13 @@ const Teams = ({ siteData }) => {
                 />
               </div>
               <div className='name'>
-                <h6>{teamNames && teamNames.airRifle ? teamNames.airRifle : ''}</h6>
+                <h6>
+                  {teamNames && teamNames.airRifle ? teamNames.airRifle : ''}
+                </h6>
               </div>
             </div>
           </Link>
-          <Link to='archery' >
+          <Link to='archery'>
             <div className='box'>
               <div className='img-box'>
                 <img
@@ -118,14 +128,16 @@ const Teams = ({ siteData }) => {
                 />
               </div>
               <div className='name'>
-                <h6>{teamNames && teamNames.archery ? teamNames.archery : ''}</h6>
+                <h6>
+                  {teamNames && teamNames.archery ? teamNames.archery : ''}
+                </h6>
               </div>
             </div>
-            </Link>
+          </Link>
         </div>
       </div>
       <div className='read-btn'>
-        <Link to='/teams' >Read More</Link>
+        <Link to='/teams'>Read More</Link>
       </div>
     </section>
   )
