@@ -13,7 +13,7 @@ const Home = ({ siteData }) => {
       <HeroWrapper siteData={siteData.heroWrapper} />
       <About siteData={siteData.aboutPage} />
       <Teams siteData={siteData.teamsPage} />
-      <Gallery />
+      <Gallery siteData={siteData.galleryPage} />
       <News />
       <Contact />
     </Fragment>

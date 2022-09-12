@@ -8,7 +8,11 @@
 
 .portfolio_section .img-box {
   position: relative;
-  margin: 10px;
+  padding: 10px 10px 10px 10px;
+  width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .portfolio_section .img-box img {
@@ -72,6 +76,28 @@
 
 .portfolio_section .img-box:hover a img {
   opacity: 1;
+}
+.portfolio_section .read-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.portfolio_section .read-btn a {
+  display: inline-block;
+  padding: 8px 25px;
+  background-color: #000000;
+  border: 1px solid #000000;
+  color: #ffffff;
+  border-radius: 25px;
+}
+
+.portfolio_section .read-btn a:hover {
+  background-color: transparent;
+  color: #000000;
 }
 @media (max-width: 992px) {
   .portfolio_section {

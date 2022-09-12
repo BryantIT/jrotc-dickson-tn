@@ -66,8 +66,8 @@ const Teams = ({ siteData }) => {
               </div>
             </div>
           </Link>
-          <a href=''>
-            <div className='box'>
+          <Link to='/drill-team' >
+          <div className='box'>
               <div className='img-box'>
                 <img
                   src={require('../../assests/imgs/drillTeam.png')}
@@ -84,7 +84,7 @@ const Teams = ({ siteData }) => {
                 <h6>{teamNames && teamNames.drillTeam ? teamNames.drillTeam : ''}</h6>
               </div>
             </div>
-          </a>
+          </Link>
           <Link to='air-rifle' >
           <div className='box'>
               <div className='img-box'>
@@ -104,8 +104,7 @@ const Teams = ({ siteData }) => {
               </div>
             </div>
           </Link>
-          <a href=''>
-            <Link to='archery' >
+          <Link to='archery' >
             <div className='box'>
               <div className='img-box'>
                 <img
@@ -124,7 +123,6 @@ const Teams = ({ siteData }) => {
               </div>
             </div>
             </Link>
-          </a>
         </div>
       </div>
       <div className='read-btn'>

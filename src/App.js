@@ -25,7 +25,8 @@ function App() {
         heroWrapper: info.heroWrapper,
         nav: info.nav,
         aboutPage: info.aboutPage,
-        teamsPage: info.teamsPage
+        teamsPage: info.teamsPage,
+        galleryPage: info.galleryPage,
       }
     })
     return data
