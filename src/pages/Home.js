@@ -14,7 +14,7 @@ const Home = ({ siteData }) => {
       <About siteData={siteData.aboutPage} />
       <Teams siteData={siteData.teamsPage} />
       <Gallery siteData={siteData.galleryPage} />
-      <News />
+      <News siteData={siteData.newsPage} />
       <Contact />
     </Fragment>
   )

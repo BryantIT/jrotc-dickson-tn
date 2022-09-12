@@ -11,7 +11,6 @@ const Teams = ({ siteData }) => {
     setTitle(siteData.title)
     setStatement(siteData.statement)
     setTeamNames(siteData.teamNames)
-    console.log(siteData)
   }, [])
   return (
     <section className='service_section layout_padding'>

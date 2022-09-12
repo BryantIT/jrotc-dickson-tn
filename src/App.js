@@ -27,6 +27,7 @@ function App() {
         aboutPage: info.aboutPage,
         teamsPage: info.teamsPage,
         galleryPage: info.galleryPage,
+        newsPage: info.newsPage,
       }
     })
     return data
