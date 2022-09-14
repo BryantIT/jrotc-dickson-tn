@@ -42,9 +42,23 @@ const NavTest = () => {
     <div className="menu_list">
       About Us
     </div>
+    <div className='line' ></div>
+    <div className="menu_list">
+      Contact Us Contact Us
+    </div>
+    <div className='line' ></div>
     <div className="menu_list">
       Contact Us
     </div>
+    <div className='line' ></div>
+    <div className="menu_list">
+      Contact Us
+    </div>
+    <div className='line' ></div>
+    <div className="menu_list">
+      Contact Us
+    </div>
+    <div className='line' ></div>
   </div>
   <input 
   className="menu_input" 
