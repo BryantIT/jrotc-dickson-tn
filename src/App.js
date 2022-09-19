@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import SiteDataContext from './SiteDataContext'
 // Components
 import Nav from './components/nav/Nav'
-import NavTest from './components/nav/NavTest'
 import Footer from './components/footer/Footer'
 // Pages
 import Home from './pages/Home'
@@ -46,7 +45,7 @@ function App() {
   }, [])
   return loading ? null : (
     <div className='app'>
-      <NavTest siteData={siteData.nav} />
+      <Nav siteData={siteData.nav} />
       <Routes>
         <Route path='/' element={<Home siteData={siteData} />}></Route>
       </Routes>
