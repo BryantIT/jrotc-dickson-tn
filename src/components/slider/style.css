@@ -156,4 +156,9 @@
   .slider_section .carousel-control-next {
     left: 36%;
   }
+
+  .slider_section .img-box img {
+    width: 100%;
+    height: 500px;
+  }
 }
