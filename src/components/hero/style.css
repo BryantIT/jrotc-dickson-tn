@@ -1,0 +1,32 @@
+.hero_area {
+  position: relative;
+}
+
+.sub_page .hero_area {
+  height: auto;
+}
+
+.hero_area.sub_pages {
+  height: auto;
+}
+.header_section {
+  background-color: #222222;
+  padding: 10px 0;
+}
+
+.header_section .container-fluid {
+  padding-right: 25px;
+  padding-left: 25px;
+}
+
+.header_section .quote_btn-container a {
+  color: #ffffff;
+}
+
+.header_section .quote_btn-container a img {
+  margin-right: 10px;
+}
+
+.header_section .quote_btn-container a span {
+  margin: 0 10px 0 20px;
+}
