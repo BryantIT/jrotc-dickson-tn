@@ -7,7 +7,7 @@ import Gallery from '../components/gallery/Gallery'
 import News from '../components/news/News'
 import Contact from '../components/contact/Contact'
 
-const Home = ({ siteData }) => {
+const HomePage = ({ siteData }) => {
   return (
     <Fragment>
       <HeroWrapper siteData={siteData.heroWrapper} />
@@ -19,4 +19,4 @@ const Home = ({ siteData }) => {
     </Fragment>
   )
 }
-export default Home
+export default HomePage
