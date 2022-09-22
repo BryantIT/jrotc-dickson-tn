@@ -9,12 +9,22 @@ const AboutFull = ({ siteData }) => {
   const [introTitle, setIntroTitle] = useState(null)
   const [heroTitle, setHeroTitle]  = useState(null)
   const [heroSubTitle, setHeroSubTitle] = useState(null)
+  const [obligationStatement, setObligationStatement] = useState(null)
+  const [bulletSectionTitle, setBulletSectionTitle] = useState(null)
+  const [bulletList, setBulletList] = useState(null)
+  const [arrayLoaded, setArrayLoaded] = useState(false)
   useEffect(() => {
     setPurpose(siteData.purpose)
     setIntroTitle(siteData.introTitle)
     setHeroTitle(siteData.heroTitle)
     setHeroSubTitle(siteData.heroSubTitle)
+    setObligationStatement(siteData.obligationStatement)
+    setBulletSectionTitle(siteData.bulletSectionTitle)
+    setBulletList(siteData.bulletList)
+    // Return to top of screen if clicked from link at bottom
+    window.scrollTo(0, 0)
   }, [siteData])
+
   return (
     <Fragment>
       <HeroImage title={heroTitle} subtitle={heroSubTitle} />
@@ -29,9 +39,16 @@ const AboutFull = ({ siteData }) => {
                 <hr />
               </div>
               <p>{purpose ? purpose : ''}</p>
-              <div>
-                <Link to='/about'>Read More</Link>
-              </div>
+              <strong>{obligationStatement ? obligationStatement : ''}</strong>
+              <br />
+              <p><strong>{bulletSectionTitle ? bulletSectionTitle : ''}</strong></p>
+              {
+                bulletList && bulletList.length > 0 ? bulletList.map(bullet => (
+                  <ul className='bullet-arrows' >
+                <li>{bullet}</li>
+              </ul>
+                )) : null
+              }
             </div>
           </div>
           <div className='col-md-6'>
