@@ -6,6 +6,8 @@ import Footer from './components/footer/Footer'
 // Pages
 import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
+import NewsPage from './pages/NewsPage'
+// Router
 import { Routes, Route } from 'react-router-dom'
 import './App.css'
 // FireBase
@@ -50,6 +52,7 @@ function App() {
       <Routes>
         <Route path='/' element={<HomePage siteData={siteData} />}></Route>
         <Route path='/about' element={<AboutPage siteData={siteData} />}></Route>
+        <Route path='/news' element={<NewsPage siteData={siteData} />}></Route>
       </Routes>
       <Footer />
     </div>
