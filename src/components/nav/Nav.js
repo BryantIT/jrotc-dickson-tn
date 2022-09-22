@@ -29,7 +29,7 @@ const Nav = ({ siteData }) => {
             type='radio'
             defaultChecked={true}
           />
-          <label className='menu_label' for='btn1'>
+          <label className='menu_label' htmlFor='btn1'>
             <div className='icon'>
               <FaBars onClick={mainMenuTrigger} />
             </div>
@@ -60,7 +60,7 @@ const Nav = ({ siteData }) => {
           </div>
         </div>
         <input className='menu_input' id='btn2' name='menu' type='radio' />
-        <label className='menu_label' for='btn2'>
+        <label className='menu_label' htmlFor='btn2'>
           <div className='icon'>
             <RiParentFill onClick={parentMenuTrigger} />
           </div>
@@ -69,7 +69,7 @@ const Nav = ({ siteData }) => {
           </Link>
         </label>
         <input className='menu_input' id='btn3' name='menu' type='radio' />
-        <label className='menu_label' for='btn3'>
+        <label className='menu_label' htmlFor='btn3'>
           <div className='icon'>
             <RiShieldUserLine />
           </div>
@@ -78,7 +78,7 @@ const Nav = ({ siteData }) => {
           </Link>
         </label>
         <input className='menu_input' id='btn4' name='menu' type='radio' />
-        <label className='menu_label' for='btn4'>
+        <label className='menu_label' htmlFor='btn4'>
           <div className='icon'>
             <RiAdminFill />
           </div>

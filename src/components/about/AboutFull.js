@@ -44,7 +44,7 @@ const AboutFull = ({ siteData }) => {
               <p><strong>{bulletSectionTitle ? bulletSectionTitle : ''}</strong></p>
               {
                 bulletList && bulletList.length > 0 ? bulletList.map(bullet => (
-                  <ul className='bullet-arrows' >
+                  <ul className='bullet-arrows' key={bullet}>
                 <li>{bullet}</li>
               </ul>
                 )) : null

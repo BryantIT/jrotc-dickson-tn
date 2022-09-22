@@ -42,7 +42,7 @@ const News = ({ siteData }) => {
         <div className='row'>
           {bloggerData
             ? bloggerData.items.map((blog) => (
-                <div className='col-md-4'>
+                <div className='col-md-4' key={blog.id}>
                   <div className='box'>
                     <div className='img-box'>
                       <img
