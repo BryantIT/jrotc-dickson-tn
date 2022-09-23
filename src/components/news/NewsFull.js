@@ -6,6 +6,8 @@ import './style.css'
 const NewsFull = ({ siteData }) => {
   const bloggerKey = process.env.REACT_APP_BLOGGER_API_KEY
   const bloggerURL = 'https://www.googleapis.com/blogger/v3/blogs/'
+  const twitterUrl = 'https://twitter.com/'
+  const [twitterHandle, setTwitterHandle] = useState(null)
   const [bloggerID, setBloggerID] = useState(null)
   const [bloggerData, setBloggerData] = useState(null)
   const [title, setTitle] = useState(null)
@@ -16,7 +18,8 @@ const NewsFull = ({ siteData }) => {
     setTitle(siteData.title)
     setBloggerID(siteData.bloggerID)
     setSubTitle(siteData.subTitle)
-  }, [])
+    setTwitterHandle(siteData.twitterHandle)
+  }, [siteData])
 
   useEffect(() => {
     if (bloggerID) {
@@ -30,35 +33,53 @@ const NewsFull = ({ siteData }) => {
         })
     }
   }, [bloggerID])
+
+  useEffect(() => {
+    const script = document.createElement('script')
+    script.src = 'https://platform.twitter.com/widgets.js'
+    document.getElementsByClassName('twitter-embed')[0].appendChild(script)
+  }, [])
   return (
     <section className='news_section layout_padding'>
       <div className='container'>
         <div className='row'>
-        <div className='col text-center border-right'>Hello Twitter Column</div>
-        <div className='col-8 border-right'>
-          <div className='d-flex flex-column align-items-end'>
-            <div className='custom_heading-container'>
-              <hr />
-              <h2>{title ? title : ''}</h2>
+          <div className='col-3 text-center border-right'>
+            <div className='twitter-embed'>
+              <a
+                class='twitter-timeline'
+                data-tweet-limit='5'
+                href={twitterUrl + twitterHandle}
+              >
+                Tweets by DCcougarnation
+              </a>
             </div>
-            <p>{subTitle ? subTitle : ''}</p>
-            <a href={profileURL} target='_blank' rel='noopener noreferrer'>
-              Read more here!
-            </a>
           </div>
-          <div className='row'>
-            {bloggerData
-              ? bloggerData.items.map((blog) => (
-                  <div className='col-md-4 border-right' key={blog.id}>
-                    <div className='box'>
-                      <div className='img-box'>
-                        <img
-                          src={blog && blog.images ? blog.images[0].url : null}
-                          alt=''
-                        />
-                      </div>
-                      <div className='action-box'>
-                        {/* <div className='action'>
+          <div className='col-8 border-right'>
+            <div className='d-flex flex-column align-items-end'>
+              <div className='custom_heading-container'>
+                <hr />
+                <h2>{title ? title : ''}</h2>
+              </div>
+              <p>{subTitle ? subTitle : ''}</p>
+              <a href={profileURL} target='_blank' rel='noopener noreferrer'>
+                Read more here!
+              </a>
+            </div>
+            <div className='row'>
+              {bloggerData
+                ? bloggerData.items.map((blog) => (
+                    <div className='col-md-4 border-right' key={blog.id}>
+                      <div className='box'>
+                        <div className='img-box'>
+                          <img
+                            src={
+                              blog && blog.images ? blog.images[0].url : null
+                            }
+                            alt=''
+                          />
+                        </div>
+                        <div className='action-box'>
+                          {/* <div className='action'>
                   <a href=''>
                     <img src={require('../../assests/imgs/like.png')} alt='' />
                   </a>
@@ -72,33 +93,33 @@ const NewsFull = ({ siteData }) => {
                     <img src={require('../../assests/imgs/share.png')} alt='' />
                   </a>
                 </div> */}
-                      </div>
-                      <div className='detail-box'>
-                        <h4>{blog ? blog.title : null}</h4>
-                        <p
-                          dangerouslySetInnerHTML={{
-                            __html: blog
-                              ? blog.content.substring(0, 800)
-                              : null,
-                          }}
-                        ></p>
-                        <div>
-                          <a
-                            href={blog.url}
-                            target='_blank'
-                            rel='noreferrer noopener'
-                          >
-                            Read More
-                          </a>
+                        </div>
+                        <div className='detail-box'>
+                          <h4>{blog ? blog.title : null}</h4>
+                          <p
+                            dangerouslySetInnerHTML={{
+                              __html: blog
+                                ? blog.content.substring(0, 800)
+                                : null,
+                            }}
+                          ></p>
+                          <div>
+                            <a
+                              href={blog.url}
+                              target='_blank'
+                              rel='noreferrer noopener'
+                            >
+                              Read More
+                            </a>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                ))
-              : null}
+                  ))
+                : null}
+            </div>
           </div>
-        </div>
-        <div className='col text-center' >Hello Insta Column</div>
+          <div className='col-3 text-center'>Hello Insta Column</div>
         </div>
       </div>
     </section>
