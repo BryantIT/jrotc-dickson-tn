@@ -4,7 +4,10 @@ import SiteDataContext from './SiteDataContext'
 import Nav from './components/nav/Nav'
 import Footer from './components/footer/Footer'
 // Pages
-import Home from './pages/Home'
+import HomePage from './pages/HomePage'
+import AboutPage from './pages/AboutPage'
+import NewsPage from './pages/NewsPage'
+// Router
 import { Routes, Route } from 'react-router-dom'
 import './App.css'
 // FireBase
@@ -47,7 +50,9 @@ function App() {
     <div className='app'>
       <Nav siteData={siteData.nav} />
       <Routes>
-        <Route path='/' element={<Home siteData={siteData} />}></Route>
+        <Route path='/' element={<HomePage siteData={siteData} />}></Route>
+        <Route path='/about' element={<AboutPage siteData={siteData} />}></Route>
+        <Route path='/news' element={<NewsPage siteData={siteData} />}></Route>
       </Routes>
       <Footer />
     </div>

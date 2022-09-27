@@ -37,3 +37,18 @@
   font-weight: bold;
   margin: 0;
 }
+
+.bullet-arrows li {
+    list-style: none;
+    margin: 20px;
+}
+
+.bullet-arrows li:before {
+  content: "\00BB";
+  position: relative;
+  right: 3px;
+  bottom: 3px;
+  height: 5px;
+  width: 5px;
+}
+
