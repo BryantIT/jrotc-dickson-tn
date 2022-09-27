@@ -46,7 +46,7 @@ const NewsFull = ({ siteData }) => {
           <div className='col-3 text-center border-right'>
             <div className='twitter-embed'>
               <a
-                class='twitter-timeline'
+                className='twitter-timeline'
                 data-tweet-limit='5'
                 href={twitterUrl + twitterHandle}
               >
@@ -119,7 +119,9 @@ const NewsFull = ({ siteData }) => {
                 : null}
             </div>
           </div>
-          <div className='col-3 text-center'>Hello Insta Column</div>
+          <div className='col-3 text-center'>
+      
+          </div>
         </div>
       </div>
     </section>
